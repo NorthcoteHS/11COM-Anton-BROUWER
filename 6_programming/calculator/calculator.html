@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Anton's Calculator</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script>
+
+            //When an imput field is changed, this function will calculate the answer
+            function solve()
+
+               var x = Number(document.getElementById("input1").value);
+
+                //Need to excract selected option from list
+               var e = document.getElementById("input2");
+               var y = e.options[e.selectedIndex].value;
+
+
+               var z = Number(document.getElementById("input3").value);
+
+               var answer= "";
+
+
+                if (y=="plus"){
+                    answer = x + z;
+                }  else if (y=="minus"){
+                    answer = x - z;
+                }  else if (y=="multiply"){
+                    answer = x * z;
+                }  else if (y=="divide"){
+                    answer = x / z;
+                }  else {
+                    window.alert("STOP TRYING TO HACK MY CODE!!") //XD
+                }
+
+
+                document.getElementById('output').value = answer;
+
+            }
+
+
+        </script>
+
+         <style type="text/css">
+             body{
+                 background-color: black;
+             }
+          input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+}
+             input[id=input1], select {
+    width: 10%;
+    padding: 0.1px 0.1px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    box-sizing: border-box;
+    background-color: black
+    color: #01FE2B;
+    text-align: center
+
+
+}
+             .center {
+    margin: auto;
+    width: 60%;
+    text-align: center;
+    padding: 10px;
+    padding: 70px 0;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+
+
+}
+
+
+        </style>
+
+
+    </head>
+
+    <body>
+
+       <div class="center">
+            <form action="/action_page.php">
+
+            <input type="number" id="input1" onkeyup="solve()" >
+
+
+            <select id="input2" onchange="solve()">
+                <option value="plus">+</option>
+                <option value="minus">-</option>
+                <option value="multiply">×</option>
+                <option value="divide">÷</option>
+            </select>
+
+            <input type="number" id="input3" onkeyup="solve()">
+
+                =
+
+
+            <input type=number id="output" readonly>
+
+
+        </form>
+        </div>
+
+
+
+    </body>
+
+</html>
