@@ -4,17 +4,51 @@
         <title>PigLatin</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-
         <style type="text/css">
             /* Your CSS goes here */
         </style>
-    </head>
-    <body>
-        <!-- Your HTML goes here -->
 
 
         <script>
-            /* Your JS goes here */
+
+                function solve() {
+
+                    //document.getElementById('output').value = document.getElementById('input').value;
+                    var inputString = document.getElementById('input').value;
+                    //var pos = str.search("cat");
+                    //var res = str.slice(pos);
+                    //var replace =  str.replace("cat", "fat");
+                    //var uppercase = replace.toUpperCase();
+                    //var concatenated = str.concat("=", uppercase);
+                    var sentence = inputString.split(" ");
+
+                    var outputString = ""
+
+                    var i;
+                    for (i = 0; i < sentence.length; i++) {
+                        outputString += sentence[i] + "";
+                    }
+
+
+                    document.getElementById('output').value = outputString;
+
+
+                }
         </script>
+
+
+    </head>
+    <body>
+
+        <form action="/actionpage.php">
+
+            <textarea rows="4" cols="50" id="input"></textarea>
+            <input type="button" id="button" onclick="solve()">
+            <textarea rows="4" cols="50" id="output"></textarea>
+
+        </form>
+
+
+
     </body>
 </html>
